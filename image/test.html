@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片查看插件</title>
+    <link rel="stylesheet" type="text/css" href="./css/previewer.css" />
+    <style type="text/css">
+
+        ul, li {
+          list-style: outside none none;
+          margin: 0;
+          padding: 0;
+      }
+
+      a {
+        color: #333;
+        outline: medium none;
+        text-decoration: none;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div data-rel="main" style="z-index: 999999999; position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px;" class="previewer-container ">
+      <div class="pvc-close">
+        <a data-btn="close" href="javascript:;" style="display: none;">关闭</a>
+      </div>
+      <div class="pvc-pause">
+        <a data-btn="pause" style="display:none;" href="javascript:;"><i>暂停</i><s class="l"></s><s class="r"></s></a>
+      </div>
+      <div class="pvc-box">
+        <div class="pvc-photo-wrap">
+          <img data-rel="pic" fid="1" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: block;" alt="" src="./01.jpg" ackey="1440">
+          <img data-rel="pic" fid="2" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./02.jpg" ackey="1440">
+          <img data-rel="pic" fid="3" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./03.jpg" ackey="1440">
+          <img data-rel="pic" fid="4" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./04.jpg" ackey="1440">
+          <img data-rel="pic" fid="5" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./05.jpg" ackey="1440">
+          <img data-rel="pic" fid="6" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./06.jpg" ackey="1440">
+          <img data-rel="pic" fid="7" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./07.jpg" ackey="1440">
+          <img data-rel="pic" fid="8" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./08.jpg" ackey="1440">
+          <img data-rel="pic" fid="9" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./09.jpg" ackey="1440">
+          <img data-rel="pic" fid="10" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./10.jpg" ackey="1440">
+          <img data-rel="pic" fid="11" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./11.png" ackey="1440">
+          <img data-rel="pic" fid="12" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; transform: rotate(0deg); width: 690px; top: 10px; left: 615px; cursor: move; display: none;" alt="" src="./12.jpg" ackey="1440">
+
+        </div>
+        <div data-rel="file_name" class="pvc-photo-name" style="display: block;">01.jpg <span style="font-size:12px;font-weight:normal;">(115.42KB)</span>
+        </div>
+        <div data-auto="left" class="pvc-side-nav" style="display: block;">
+          <a data-btn="prev" class="pv-prev" href="javascript:;">上一个</a>
+          <a data-btn="next" class="pv-next" href="javascript:;">下一个</a>
+        </div>
+        <div style="z-index: 999;" data-rel="option" class="pvc-option">
+          
+          <div data-ui-rel="btn_box" style="display:none;" class="pvco-popup">
+            <s class="arrow"></s><b class="arrow"></b>
+            <a data-btn="magic" href="javascript:;"><i class="icon-pvco ipo-beauty"></i><span>美化</span></a>
+            <a data-btn="source" href="javascript:;" style=""><i class="icon-pvco ipo-download"></i><span>下载</span></a>
+            <a data-btn="del" href="javascript:;"><i class="icon-pvco ipo-remove"></i><span>删除</span></a>
+          </div>
+        </div>
+        <div data-auto="bottom" class="pvc-operate" style="display: block;">
+          <a data-btn="file_list" class="pvo-list" href="javascript:;">图片列表</a>
+          <!-- <a data-btn="silde_show" class="pvo-slideshow" href="javascript:;">幻灯播放</a> -->
+          <a data-btn="rotate_l" class="pvo-counterclockwise" href="javascript:;">逆时针旋转</a>
+          <a data-btn="rotate_r" class="pvo-clockwise" href="javascript:;">顺时针旋转</a>
+          <a data-zoom-btn="zoom_in" class="pvo-zoomin" href="javascript:;">放大</a>
+          <a data-zoom-btn="zoom_out" class="pvo-zoomout" href="javascript:;">缩小</a>
+        </div>
+      </div>
+      <div data-auto="bottom" data-rel="file_list" class="pvc-list" style="display: block;">
+        <div class="pvcl-nav">
+          <a btn="prev" class="pvl-prev" href="javascript:;">向前</a>
+          <a btn="next" class="pvl-next" href="javascript:;">向后</a>
+        </div>
+        <div class="pvcl-container">
+          <ul  style="left: 0px;">
+
+            <li >
+              <a href="javascript:;" class="current" fid="1">
+                <img src="./01.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="2">
+                <img src="./02.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="3">
+                <img src="./03.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="4">
+                <img src="./04.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="5">
+                <img src="./05.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="6">
+                <img src="./06.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="7">
+                <img src="./07.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="8">
+                <img src="./08.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="9">
+                <img src="./09.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="10">
+                <img src="./10.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="11">
+                <img src="./11.png" style="background:#fff;">
+              </a>
+            </li>
+
+            <li >
+              <a href="javascript:;" fid="12">
+                <img src="./12.jpg" style="background:#fff;">
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript"  src="./js/view.js"></script>
+  <script type="text/javascript" src="./js/jquery-page.js"></script>
+</html>
